@@ -12,6 +12,7 @@ interface Project {
   services: string;
   year: string;
   color: string;
+  image: string;
 }
 
 const projects: Project[] = [
@@ -21,6 +22,7 @@ const projects: Project[] = [
     services: "Design & Development",
     year: "2026",
     color: "#455CE9",
+    image: "https://picsum.photos/seed/portv2/420/280",
   },
   {
     name: "E-Commerce App",
@@ -28,6 +30,7 @@ const projects: Project[] = [
     services: "Development",
     year: "2025",
     color: "#2D8B61",
+    image: "https://picsum.photos/seed/ecom/420/280",
   },
   {
     name: "Brand Identity",
@@ -35,6 +38,7 @@ const projects: Project[] = [
     services: "Design",
     year: "2025",
     color: "#B85C38",
+    image: "https://picsum.photos/seed/brand/420/280",
   },
   {
     name: "Dashboard UI",
@@ -42,6 +46,7 @@ const projects: Project[] = [
     services: "Design & Development",
     year: "2024",
     color: "#8B5CF6",
+    image: "https://picsum.photos/seed/dash/420/280",
   },
   {
     name: "Mobile App",
@@ -49,6 +54,7 @@ const projects: Project[] = [
     services: "Development",
     year: "2024",
     color: "#E85D75",
+    image: "https://picsum.photos/seed/mobile/420/280",
   },
   {
     name: "Landing Page",
@@ -56,6 +62,7 @@ const projects: Project[] = [
     services: "Design & Development",
     year: "2023",
     color: "#0EA5E9",
+    image: "https://picsum.photos/seed/landing/420/280",
   },
 ];
 
@@ -224,13 +231,13 @@ export default function Work() {
         className={`project-image-preview ${activeProject !== null ? "visible" : ""}`}
       >
         {activeProject !== null && (
-          <div
-            className="w-full h-full flex items-center justify-center text-lg font-medium"
-            style={{ backgroundColor: projects[activeProject].color }}
-          >
-            <span className="text-white/90 text-center px-8">
-              {projects[activeProject].name}
-            </span>
+          <div className="w-full h-full relative border border-border/20 rounded-[8px] overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src={projects[activeProject].image} 
+              alt={projects[activeProject].name}
+              className="w-full h-full object-cover"
+            />
           </div>
         )}
       </div>

@@ -1,17 +1,27 @@
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import RecentWork from "@/components/RecentWork";
-import ContactCTA from "@/components/ContactCTA";
-import Footer from "@/components/Footer";
+'use client';
+
+import { useEffect } from 'react'
 
 export default function Home() {
+  useEffect( () => {
+    (
+      async () => {
+          const LocomotiveScroll = (await import('locomotive-scroll')).default
+          const locomotiveScroll = new LocomotiveScroll();
+      }
+    )()
+  }, [])
+
   return (
-    <main className="min-h-screen bg-bg">
-      <Hero />
-      <About />
-      <RecentWork />
-      <ContactCTA />
-      <Footer />
+    <main>
+      {/* <AnimatePresence mode='wait'>
+        {isLoading && <Preloader />}
+      </AnimatePresence>
+      <Landing />
+      <Description />
+      <Projects />
+      <SlidingImages />
+      <Contact /> */}
     </main>
-  );
+  )
 }
