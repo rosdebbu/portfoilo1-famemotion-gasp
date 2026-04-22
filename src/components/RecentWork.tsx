@@ -49,6 +49,7 @@ export default function RecentWork() {
             href="/work"
             key={i}
             className="rw-row block border-b border-border/40 py-8 group cursor-none"
+            data-cursor-text="VIEW"
           >
             <div className="flex items-center justify-between">
               <h3 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight transition-transform duration-300 group-hover:translate-x-4">
