@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import "../components/transitions/transitions.scss";
-import CustomCursor from "@/components/CustomCursor";
 import PageLoader from "@/components/PageLoader";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
@@ -27,13 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
+    <html lang="en" className={`${manrope.variable} h-full antialiased`} suppressHydrationWarning>
       <body
         className="min-h-full flex flex-col"
         style={{ fontFamily: "var(--font-manrope), sans-serif" }}
       >
         <PageLoader />
-        <CustomCursor />
         <Navbar />
         <SmoothScroll>
           <TransitionLayout>{children}</TransitionLayout>

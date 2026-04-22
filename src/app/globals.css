@@ -15,7 +15,6 @@
 
 /* Global Styles */
 html {
-  cursor: none;
   scroll-behavior: auto;
 }
 
@@ -253,4 +252,12 @@ body {
     height: 140px;
     font-size: 14px;
   }
+}
+
+/* Fully restore native cursor by overriding any cursor-none classes */
+.cursor-none {
+  cursor: auto !important;
+}
+a.cursor-none, button.cursor-none, .magnetic-btn.cursor-none, .cta-circle.cursor-none, [role="button"].cursor-none, .rw-row.cursor-none, .nav-link.cursor-none {
+  cursor: pointer !important;
 }
